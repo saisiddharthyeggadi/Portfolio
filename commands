@@ -13,6 +13,7 @@ git status                           #checks the status of the git repository
 git origin add                       #adds the remote repository
 git branch -M main                   #renames the branch to main
 git remote add origin https://github.com/saisiddharthyeggadi/Portfolio.git #adds the remote repository
+git remote -v
 node -v && npm -v && git status      #checks the version of node, npm and git
 git checkout -b navbar               #creates a new branch
 git branch                           #lists all the branches
