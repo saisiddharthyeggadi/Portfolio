@@ -1,0 +1,44 @@
+node install
+node --version
+npm install
+npm --version
+npm init
+npm init -y
+npx @angular/cli new Portfolio
+
+
+git init                             #initializes the git repository
+git --version                        #checks the version of git
+git status                           #checks the status of the git repository
+git origin add                       #adds the remote repository
+git branch -M main                   #renames the branch to main
+git remote add origin https://github.com/saisiddharthyeggadi/Portfolio.git #adds the remote repository
+node -v && npm -v && git status      #checks the version of node, npm and git
+git checkout -b navbar               #creates a new branch
+git branch                           #lists all the branches
+git add .                            #adds all the files to the staging area
+git commit -m "Add navbar layout"    #commits the changes
+git push origin navbar               #pushes the changes to the remote repository
+
+git checkout main                    #switches to the main branch
+git pull origin main                 #pulls the changes from the remote repository
+git merge navbar                     #merges the navbar branch into the main branch
+git push origin main                 #pushes the changes to the remote repository
+git branch -d navbar                 #deletes the navbar branch
+
+git rm -r --cached node_modules
+git rm -r --cached .
+
+
+
+
+＃#daily commands at the start of the day#＃
+cd REPO
+git pull origin maind
+npm install
+npm start
+
+##daily commands at the end of he day##
+git add .
+git commit -m "Add navbar layout"
+git push origin main
