@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build outputs
+dist/
+.astro/
+
+# temporary parser & extraction files
+parse.py
+read_pdfs.js
+extracted_resume_data.txt
+parsed_resumes.txt
+resume_text.txt
+resume_utf8.txt
+
+# environment & logs
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS metadata
+.DS_Store
+Thumbs.db

@@ -1,0 +1,57 @@
+---
+import { achievementsData } from '../data/portfolioData';
+---
+
+<section id="achievements" class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Title -->
+    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold">
+        <span>// HONORS & RECOGNITION</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+        Scholastic & <span class="orange-gradient-text">Competitive Achievements</span>
+      </h2>
+      <p class="text-gray-400 dark:text-gray-400 light:text-slate-600 text-base">
+        Consistently placing in top ranks nationwide and maintaining relentless engineering discipline.
+      </p>
+    </div>
+
+    <!-- Achievements Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {achievementsData.map((ach, index) => (
+        <div class="glass-panel rounded-3xl p-6 space-y-4 orange-glow-border flex flex-col justify-between group hover:-translate-y-1 transition-transform">
+          
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-mono font-bold border border-orange-500/30">
+                {ach.badge}
+              </span>
+              <span class="text-xs text-gray-400 font-mono">{ach.date}</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 light:text-slate-900 group-hover:text-orange-400 transition-colors">
+              {ach.title}
+            </h3>
+
+            <p class="text-xs text-orange-400 font-semibold font-mono">
+              {ach.organization}
+            </p>
+
+            <p class="text-xs sm:text-sm text-gray-300 dark:text-gray-300 light:text-slate-600 leading-relaxed">
+              {ach.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-gray-400">Key Highlight</span>
+            <span class="font-bold text-gray-200 dark:text-gray-200 light:text-slate-800 font-mono">{ach.highlight}</span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Achievements from '../components/Achievements.astro';
+import Contact from '../components/Contact.astro';
+import ResumeModal from '../components/ResumeModal.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Yeggadi Sai Siddharth | Bilingual AI & Systems Engineer Portfolio">
+  <!-- Navigation Bar -->
+  <Header />
+
+  <!-- Main Sections -->
+  <main class="space-y-12">
+    <Hero />
+    <About />
+    <Experience />
+    <Skills />
+    <Projects />
+    <Achievements />
+    <Contact />
+  </main>
+
+  <!-- Interactive Resume Modal -->
+  <ResumeModal />
+
+  <!-- Footer -->
+  <Footer />
+</Layout>

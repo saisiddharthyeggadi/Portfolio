@@ -1,0 +1,41 @@
+---
+import { personalData } from '../data/portfolioData';
+---
+
+<footer class="py-12 border-t border-gray-800/80 bg-gray-950/80 backdrop-blur-md relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Copyright -->
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-orange-600 to-amber-400 p-[2px]">
+          <div class="w-full h-full bg-[#0b0f17] rounded-[6px] flex items-center justify-center font-bold text-orange-400 text-xs">
+            SS
+          </div>
+        </div>
+        <p class="text-xs text-gray-400">
+          © {new Date().getFullYear()} <strong class="text-gray-200">{personalData.name}</strong>. Built with <span class="text-orange-400">Astro.js</span> & Tailwind CSS.
+        </p>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="flex items-center gap-6 text-xs text-gray-400">
+        <a href="#about" class="hover:text-orange-400 transition-colors">About</a>
+        <a href="#experience" class="hover:text-orange-400 transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-orange-400 transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-orange-400 transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-orange-400 transition-colors">Contact</a>
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <a
+        href="#hero"
+        aria-label="Back to Top"
+        class="w-10 h-10 rounded-xl bg-gray-900 border border-gray-800 hover:border-orange-500/50 text-gray-400 hover:text-orange-400 flex items-center justify-center transition-all shadow-glow-orange hover:scale-105"
+      >
+        ↑
+      </a>
+
+    </div>
+  </div>
+</footer>
