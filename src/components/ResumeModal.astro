@@ -2,36 +2,28 @@
 import { resumeOptions } from '../data/portfolioData';
 ---
 
-<!-- Resume Selection & Preview Modal -->
-<div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md hidden transition-all duration-300">
-  <div class="glass-panel w-full max-w-5xl h-[90vh] rounded-3xl p-6 sm:p-8 flex flex-col orange-glow-border relative animate-float">
+<div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md hidden transition-all duration-300">
+  <div class="formal-card w-full max-w-5xl h-[90vh] rounded-2xl p-6 sm:p-8 flex flex-col relative bg-gray-950 dark:bg-gray-950 light:bg-white">
     
-    <!-- Modal Header -->
-    <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-4">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xl font-bold">
-          📄
-        </div>
-        <div>
-          <h3 class="text-xl font-extrabold text-gray-100 dark:text-gray-100 light:text-slate-900">
-            Curriculum Vitae / Specialized Resumes
-          </h3>
-          <p class="text-xs text-gray-400 dark:text-gray-400 light:text-slate-600">
-            Select a specialized resume version tailored for specific engineering roles.
-          </p>
-        </div>
+    <div class="flex items-center justify-between border-b border-gray-800 dark:border-gray-800 light:border-slate-200 pb-4 mb-4">
+      <div>
+        <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 light:text-slate-900">
+          Curriculum Vitae / Specialized Resumes
+        </h3>
+        <p class="text-xs text-gray-400 dark:text-gray-400 light:text-slate-600">
+          Select a specialized resume variant tailored for specific engineering roles.
+        </p>
       </div>
-      <button id="close-resume-modal" class="p-2 rounded-xl text-gray-400 hover:text-white hover:bg-gray-800 text-xl transition-colors">✕</button>
+      <button id="close-resume-modal" class="p-2 rounded-xl text-gray-400 hover:text-white dark:hover:text-white light:hover:text-slate-900 font-mono text-base">✕</button>
     </div>
 
-    <!-- Resume Variant Selector Tabs -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
       {resumeOptions.map((res, index) => (
         <button
           class={`resume-tab-btn px-3 py-2.5 rounded-xl text-xs text-left transition-all border ${
             index === 0
-              ? 'active bg-orange-500 text-white border-orange-500 shadow-glow-orange'
-              : 'bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-100 text-gray-300 dark:text-gray-300 light:text-slate-700 border-gray-800 dark:border-gray-800 light:border-slate-300 hover:border-orange-500/40'
+              ? 'active bg-orange-600 text-white border-orange-600'
+              : 'bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-100 text-gray-300 dark:text-gray-300 light:text-slate-800 border-gray-800 dark:border-gray-800 light:border-slate-300 hover:border-orange-500/40'
           }`}
           data-pdf-src={`/resumes/${res.filename}`}
           data-pdf-filename={res.filename}
@@ -43,13 +35,12 @@ import { resumeOptions } from '../data/portfolioData';
       ))}
     </div>
 
-    <!-- Active Resume Details & Download Bar -->
-    <div class="flex items-center justify-between bg-gray-900/60 dark:bg-gray-900/60 light:bg-slate-100 px-4 py-3 rounded-2xl border border-gray-800/80 mb-4">
+    <div class="flex items-center justify-between bg-gray-900/60 dark:bg-gray-900/60 light:bg-slate-100 px-4 py-3 rounded-xl border border-gray-800 dark:border-gray-800 light:border-slate-200 mb-4">
       <div>
-        <p id="selected-resume-title" class="text-sm font-bold text-orange-400">
+        <p id="selected-resume-title" class="text-sm font-bold text-orange-500 dark:text-orange-400 light:text-orange-600">
           {resumeOptions[0].title}
         </p>
-        <p id="selected-resume-filename" class="text-xs font-mono text-gray-400">
+        <p id="selected-resume-filename" class="text-xs font-mono text-gray-400 dark:text-gray-400 light:text-slate-500">
           {resumeOptions[0].filename}
         </p>
       </div>
@@ -58,7 +49,7 @@ import { resumeOptions } from '../data/portfolioData';
         id="download-resume-btn"
         href={`/resumes/${resumeOptions[0].filename}`}
         download={resumeOptions[0].filename}
-        class="px-5 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-xs shadow-glow-orange flex items-center gap-2 transition-all hover:scale-105"
+        class="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-semibold text-xs flex items-center gap-2 transition-colors"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -67,8 +58,7 @@ import { resumeOptions } from '../data/portfolioData';
       </a>
     </div>
 
-    <!-- Embedded PDF Viewer / Iframe -->
-    <div class="flex-1 w-full bg-gray-950 rounded-2xl overflow-hidden border border-gray-800/80 relative">
+    <div class="flex-1 w-full bg-gray-900 dark:bg-gray-900 light:bg-slate-100 rounded-xl overflow-hidden border border-gray-800 dark:border-gray-800 light:border-slate-200 relative">
       <iframe
         id="resume-iframe"
         src={`/resumes/${resumeOptions[0].filename}`}
@@ -81,7 +71,6 @@ import { resumeOptions } from '../data/portfolioData';
 </div>
 
 <script>
-  // Resume Modal Open/Close Logic
   const openResumeBtn = document.getElementById('open-resume-btn');
   const resumeModal = document.getElementById('resume-modal');
   const closeResumeModal = document.getElementById('close-resume-modal');
@@ -106,15 +95,14 @@ import { resumeOptions } from '../data/portfolioData';
     }
   });
 
-  // Tab Selection Switcher
   resumeTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       resumeTabs.forEach(t => {
-        t.classList.remove('active', 'bg-orange-500', 'text-white', 'border-orange-500', 'shadow-glow-orange');
+        t.classList.remove('active', 'bg-orange-600', 'text-white', 'border-orange-600');
         t.classList.add('bg-gray-900/80', 'text-gray-300', 'border-gray-800');
       });
 
-      tab.classList.add('active', 'bg-orange-500', 'text-white', 'border-orange-500', 'shadow-glow-orange');
+      tab.classList.add('active', 'bg-orange-600', 'text-white', 'border-orange-600');
       tab.classList.remove('bg-gray-900/80', 'text-gray-300', 'border-gray-800');
 
       const src = tab.getAttribute('data-pdf-src') || '';

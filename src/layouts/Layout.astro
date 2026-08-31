@@ -7,12 +7,12 @@ interface Props {
 }
 
 const {
-  title = "Yeggadi Sai Siddharth | Bilingual AI & Systems Development Engineer",
-  description = "Portfolio of Yeggadi Sai Siddharth - Tokyo-based Bilingual AI & Software Engineer, IIT Hyderabad graduate specializing in Multi-Agent RAG, Google Cloud, PyTorch, Node.js & Angular."
+  title = "Yeggadi Sai Siddharth | Systems Development & AI Engineer",
+  description = "Portfolio of Yeggadi Sai Siddharth - Tokyo-based Systems Development Engineer & IIT Hyderabad graduate specializing in Multi-Agent RAG, Google Cloud, PyTorch, Node.js & Angular."
 } = Astro.props;
 ---
 
-<!usr/bin/env html>
+<!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -25,14 +25,6 @@ const {
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content="Yeggadi Sai Siddharth" />
-    <meta name="keywords" content="Sai Siddharth, Yeggadi Sai Siddharth, AI Engineer Tokyo, Bilingual Engineer Japan, Multi Agent RAG, Vertex AI, IIT Hyderabad, Kore.ai, Tomato Co" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://saisiddharthyeggadi.github.io/" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og-image.png" />
 
     <!-- Theme Inline Script to prevent FOUC -->
     <script is:inline>
@@ -55,19 +47,16 @@ const {
       }
     </script>
   </head>
-  <body class="bg-[#0b0f17] dark:bg-[#0b0f17] light:bg-[#f8fafc] text-gray-100 dark:text-gray-100 light:text-slate-900 transition-colors duration-300 min-h-screen relative antialiased selection:bg-orange-500/30 selection:text-orange-400">
-    <!-- Ambient Glowing Background Accents -->
-    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-orange-500/10 dark:bg-orange-600/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-slow"></div>
-    <div class="fixed bottom-0 right-1/4 w-[450px] h-[450px] bg-amber-500/10 dark:bg-amber-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <body class="bg-slate-50 dark:bg-[#0b0f17] text-slate-900 dark:text-gray-100 transition-colors duration-300 min-h-screen relative antialiased">
     
     <slot />
 
     <!-- Global Toast Container -->
     <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
-      <div class="bg-gray-900/90 dark:bg-gray-900/90 light:bg-white/95 text-white dark:text-white light:text-slate-900 border border-orange-500/40 shadow-glow-orange px-5 py-3 rounded-xl flex items-center gap-3 backdrop-blur-md">
-        <span id="toast-icon" class="text-orange-400 text-lg">✨</span>
+      <div class="bg-white dark:bg-gray-900/95 text-slate-900 dark:text-gray-100 border border-orange-500/40 shadow-lg px-5 py-3 rounded-xl flex items-center gap-3 backdrop-blur-md">
         <span id="toast-message" class="text-sm font-medium">Notification</span>
       </div>
     </div>
+
   </body>
 </html>

@@ -2,94 +2,92 @@
 import { personalData } from '../data/portfolioData';
 ---
 
-<section id="contact" class="py-20 relative">
+<section id="contact" class="py-20 relative border-t border-slate-200 dark:border-gray-800/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Title -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold">
-        <span>// GET IN TOUCH</span>
+    <div class="text-left max-w-3xl space-y-3 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 dark:bg-gray-900/90 border border-slate-300 dark:border-gray-800 text-orange-600 dark:text-orange-400 text-xs font-mono font-semibold">
+        <span>// DIRECT CONTACT</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-        Let's Connect & <span class="orange-gradient-text">Build Together</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-gray-100">
+        Initiate <span class="text-orange-600 dark:text-orange-400">Communication</span>
       </h2>
-      <p class="text-gray-400 dark:text-gray-400 light:text-slate-600 text-base">
-        Open to AI engineering collaborations, technical discussions, or corporate inquiries in Tokyo and remote globally.
+      <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+        Available for enterprise AI engineering roles, technical discussions, and professional inquiries in Tokyo and remote globally.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- Contact Info Cards (Left Column) -->
+      <!-- Contact Details (Left Column) -->
       <div class="lg:col-span-5 space-y-6">
         
-        <!-- Email Copy Card -->
-        <div class="glass-panel rounded-3xl p-6 space-y-4 orange-glow-border">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xl">
-              ✉️
-            </div>
-            <div>
-              <p class="text-xs text-orange-400 font-mono font-semibold">Direct Email</p>
-              <p class="text-sm sm:text-base font-bold text-gray-100 dark:text-gray-100 light:text-slate-900 truncate">
-                {personalData.email}
-              </p>
-            </div>
+        <!-- Direct Email Card -->
+        <div class="formal-card rounded-2xl p-6 space-y-4">
+          <div>
+            <p class="text-xs text-orange-600 dark:text-orange-400 font-mono font-semibold uppercase">
+              Direct Email Address
+            </p>
+            <p class="text-base font-bold text-slate-900 dark:text-gray-100 mt-1 select-all">
+              {personalData.email}
+            </p>
           </div>
 
           <button
             id="copy-email-btn"
-            class="w-full py-2.5 rounded-xl bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-200 border border-gray-800 dark:border-gray-800 light:border-slate-300 hover:border-orange-500/50 text-orange-400 font-semibold text-xs transition-all flex items-center justify-center gap-2 group"
+            class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-gray-900/90 border border-slate-300 dark:border-gray-800 hover:border-orange-500/50 text-slate-800 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-semibold text-xs transition-all flex items-center justify-center gap-2"
           >
-            <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 012-2v-8a2 2 0 01-2-2h-8a2 2 0 01-2 2v8a2 2 0 012 2z"/>
             </svg>
-            <span id="copy-email-text">Click to Copy Email Address</span>
+            <span id="copy-email-text">Copy Email Address</span>
           </button>
         </div>
 
-        <!-- Location & Phone Card -->
-        <div class="glass-panel rounded-3xl p-6 space-y-4 border-l-4 border-l-orange-500">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 text-xl">
-              📍
-            </div>
-            <div>
-              <p class="text-xs text-orange-400 font-mono font-semibold">Primary Location</p>
-              <p class="text-base font-bold text-gray-100 dark:text-gray-100 light:text-slate-900">
-                {personalData.location}
-              </p>
-              <p class="text-xs text-gray-400">Japan Mobile: {personalData.phoneTokyo}</p>
-            </div>
+        <!-- Location Details Card -->
+        <div class="formal-card rounded-2xl p-6 space-y-3">
+          <div>
+            <p class="text-xs text-orange-600 dark:text-orange-400 font-mono font-semibold uppercase">
+              Primary Location
+            </p>
+            <p class="text-base font-bold text-slate-900 dark:text-gray-100 mt-1">
+              {personalData.location}
+            </p>
+            <p class="text-xs text-slate-600 dark:text-gray-400 font-mono mt-1">
+              Japan Mobile: {personalData.phoneTokyo}
+            </p>
           </div>
 
-          <div class="pt-3 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
-            <p><strong>Hometown:</strong> {personalData.hometown}</p>
-            <p><strong>India Phone:</strong> {personalData.phoneIndia}</p>
+          <div class="pt-3 border-t border-slate-200 dark:border-gray-800 text-xs text-slate-600 dark:text-gray-400 space-y-1 font-mono">
+            <p>Hometown: {personalData.hometown}</p>
+            <p>India Phone: {personalData.phoneIndia}</p>
           </div>
         </div>
 
-        <!-- Social Connections -->
-        <div class="glass-panel rounded-3xl p-6 space-y-3">
-          <p class="text-xs font-mono text-orange-400 font-semibold uppercase tracking-wider">Social Profiles</p>
+        <!-- Social Channels -->
+        <div class="formal-card rounded-2xl p-6 space-y-3">
+          <p class="text-xs font-mono text-slate-700 dark:text-gray-400 font-bold uppercase">
+            Professional Channels
+          </p>
           <div class="grid grid-cols-2 gap-3">
             <a
               href={personalData.github}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 rounded-2xl bg-gray-900/60 dark:bg-gray-900/60 light:bg-slate-100 border border-gray-800 dark:border-gray-800 light:border-slate-200 hover:border-orange-500/50 flex items-center gap-2 text-xs font-bold text-gray-200 dark:text-gray-200 light:text-slate-800 hover:text-orange-400 transition-all"
+              class="p-3 rounded-xl bg-slate-100 dark:bg-gray-900/60 border border-slate-300 dark:border-gray-800 hover:border-orange-500/50 flex items-center justify-between text-xs font-bold text-slate-800 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-all"
             >
               <span>GitHub</span>
-              <span>↗</span>
+              <span>-&gt;</span>
             </a>
             <a
               href={personalData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-3 rounded-2xl bg-gray-900/60 dark:bg-gray-900/60 light:bg-slate-100 border border-gray-800 dark:border-gray-800 light:border-slate-200 hover:border-orange-500/50 flex items-center gap-2 text-xs font-bold text-gray-200 dark:text-gray-200 light:text-slate-800 hover:text-orange-400 transition-all"
+              class="p-3 rounded-xl bg-slate-100 dark:bg-gray-900/60 border border-slate-300 dark:border-gray-800 hover:border-orange-500/50 flex items-center justify-between text-xs font-bold text-slate-800 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-all"
             >
               <span>LinkedIn</span>
-              <span>↗</span>
+              <span>-&gt;</span>
             </a>
           </div>
         </div>
@@ -97,68 +95,68 @@ import { personalData } from '../data/portfolioData';
       </div>
 
       <!-- Contact Message Form (Right Column) -->
-      <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 orange-glow-border space-y-6">
+      <div class="lg:col-span-7 formal-card rounded-2xl p-6 sm:p-8 space-y-6">
         <div>
-          <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 light:text-slate-900">
-            Send a Direct Inquiry
+          <h3 class="text-xl font-bold text-slate-900 dark:text-gray-100">
+            Send Inquiry
           </h3>
-          <p class="text-xs text-gray-400 dark:text-gray-400 light:text-slate-600 mt-1">
-            Fill out the form below to initiate contact.
+          <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">
+            Complete the form to transmit a message directly.
           </p>
         </div>
 
         <form id="contact-form" class="space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="space-y-1.5">
-              <label for="name" class="text-xs font-semibold text-gray-300 dark:text-gray-300 light:text-slate-700">Your Name</label>
+              <label for="name" class="text-xs font-semibold text-slate-800 dark:text-gray-300">Your Name</label>
               <input
                 type="text"
                 id="name"
                 required
-                placeholder="e.g. Taro Yamada"
-                class="w-full px-4 py-3 rounded-xl bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-100 border border-gray-800 dark:border-gray-800 light:border-slate-300 text-sm text-gray-100 dark:text-gray-100 light:text-slate-900 placeholder-gray-500 focus:outline-none focus:border-orange-500"
+                placeholder="Name"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900/80 border border-slate-300 dark:border-gray-800 text-sm text-slate-900 dark:text-gray-100 placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               />
             </div>
 
             <div class="space-y-1.5">
-              <label for="email" class="text-xs font-semibold text-gray-300 dark:text-gray-300 light:text-slate-700">Your Email</label>
+              <label for="email" class="text-xs font-semibold text-slate-800 dark:text-gray-300">Your Email</label>
               <input
                 type="email"
                 id="email"
                 required
                 placeholder="name@example.com"
-                class="w-full px-4 py-3 rounded-xl bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-100 border border-gray-800 dark:border-gray-800 light:border-slate-300 text-sm text-gray-100 dark:text-gray-100 light:text-slate-900 placeholder-gray-500 focus:outline-none focus:border-orange-500"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900/80 border border-slate-300 dark:border-gray-800 text-sm text-slate-900 dark:text-gray-100 placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
               />
             </div>
           </div>
 
           <div class="space-y-1.5">
-            <label for="subject" class="text-xs font-semibold text-gray-300 dark:text-gray-300 light:text-slate-700">Subject</label>
+            <label for="subject" class="text-xs font-semibold text-slate-800 dark:text-gray-300">Subject</label>
             <input
               type="text"
               id="subject"
               required
-              placeholder="e.g. AI Engineering Collaboration / Opportunity"
-              class="w-full px-4 py-3 rounded-xl bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-100 border border-gray-800 dark:border-gray-800 light:border-slate-300 text-sm text-gray-100 dark:text-gray-100 light:text-slate-900 placeholder-gray-500 focus:outline-none focus:border-orange-500"
+              placeholder="Subject / Topic"
+              class="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900/80 border border-slate-300 dark:border-gray-800 text-sm text-slate-900 dark:text-gray-100 placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
             />
           </div>
 
           <div class="space-y-1.5">
-            <label for="message" class="text-xs font-semibold text-gray-300 dark:text-gray-300 light:text-slate-700">Message</label>
+            <label for="message" class="text-xs font-semibold text-slate-800 dark:text-gray-300">Message</label>
             <textarea
               id="message"
               rows="4"
               required
               placeholder="Write your message here..."
-              class="w-full px-4 py-3 rounded-xl bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-100 border border-gray-800 dark:border-gray-800 light:border-slate-300 text-sm text-gray-100 dark:text-gray-100 light:text-slate-900 placeholder-gray-500 focus:outline-none focus:border-orange-500 resize-none"
+              class="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900/80 border border-slate-300 dark:border-gray-800 text-sm text-slate-900 dark:text-gray-100 placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors resize-none"
             ></textarea>
           </div>
 
           <button
             type="submit"
-            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-sm shadow-glow-orange transition-all duration-300 hover:scale-[1.01]"
+            class="w-full py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm transition-colors"
           >
-            Send Message 🚀
+            Submit Message
           </button>
         </form>
 
@@ -169,14 +167,11 @@ import { personalData } from '../data/portfolioData';
 </section>
 
 <script>
-  // Toast Helper Function
-  function showToast(message: string, icon = '✨') {
+  function showToast(message: string) {
     const toast = document.getElementById('toast-notification');
     const toastMsg = document.getElementById('toast-message');
-    const toastIcon = document.getElementById('toast-icon');
 
     if (toastMsg) toastMsg.textContent = message;
-    if (toastIcon) toastIcon.textContent = icon;
 
     toast?.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
     
@@ -185,26 +180,24 @@ import { personalData } from '../data/portfolioData';
     }, 3500);
   }
 
-  // 1-Click Email Copy Button
   const copyBtn = document.getElementById('copy-email-btn');
   const copyText = document.getElementById('copy-email-text');
   const emailVal = "saisiddharth7369@gmail.com";
 
   copyBtn?.addEventListener('click', () => {
     navigator.clipboard.writeText(emailVal).then(() => {
-      if (copyText) copyText.textContent = "Copied to Clipboard!";
-      showToast("Email address copied to clipboard!", "📋");
+      if (copyText) copyText.textContent = "Copied to Clipboard";
+      showToast("Email address copied to clipboard.");
       setTimeout(() => {
-        if (copyText) copyText.textContent = "Click to Copy Email Address";
+        if (copyText) copyText.textContent = "Copy Email Address";
       }, 3000);
     });
   });
 
-  // Form Submit Mock Logic
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    showToast("Message sent successfully! Sai will reply shortly.", "📩");
+    showToast("Message sent successfully.");
     form.reset();
   });
 </script>

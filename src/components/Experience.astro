@@ -2,85 +2,80 @@
 import { experiencesData } from '../data/portfolioData';
 ---
 
-<section id="experience" class="py-20 relative">
+<section id="experience" class="py-20 relative border-t border-slate-200 dark:border-gray-800/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Title -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold">
+    <div class="text-left max-w-3xl space-y-3 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 dark:bg-gray-900/90 border border-slate-300 dark:border-gray-800 text-orange-600 dark:text-orange-400 text-xs font-mono font-semibold">
         <span>// CAREER & EXPERIENCE</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-        Proven Track Record in <span class="orange-gradient-text">Production Engineering</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-gray-100">
+        Professional <span class="text-orange-600 dark:text-orange-400">Work Experience</span>
       </h2>
-      <p class="text-gray-400 dark:text-gray-400 light:text-slate-600 text-base">
-        From multi-agent RAG solutions in Tokyo to LLM evaluation at Kore.ai and computer vision pipelines at Ojas.
+      <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+        Engineering roles spanning full-time Tokyo systems development, enterprise GenAI pipelines, and computer vision research.
       </p>
     </div>
 
-    <!-- Vertical Timeline Wrapper -->
-    <div class="relative border-l-2 border-orange-500/30 ml-4 md:ml-32 space-y-12">
-      {experiencesData.map((exp, index) => (
-        <div class="relative pl-6 md:pl-10 group">
+    <!-- Experience Timeline List -->
+    <div class="space-y-6">
+      {experiencesData.map((exp) => (
+        <div class="formal-card rounded-2xl p-6 sm:p-8 space-y-6">
           
-          <!-- Timeline Glowing Node Dot -->
-          <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-[#0b0f17] dark:bg-[#0b0f17] light:bg-white border-2 border-orange-500 flex items-center justify-center group-hover:scale-125 group-hover:bg-orange-500 group-hover:shadow-glow-orange transition-all duration-300">
-            <div class="w-2.5 h-2.5 rounded-full bg-orange-400 group-hover:bg-white"></div>
-          </div>
-
-          <!-- Date Badge for Desktop (Left aligned) -->
-          <div class="hidden md:block absolute -left-36 top-2 text-right w-28 text-xs font-mono font-semibold text-orange-400">
-            {exp.period}
-          </div>
-
-          <!-- Experience Card -->
-          <div class="glass-panel rounded-3xl p-6 sm:p-8 space-y-4 orange-glow-border">
-            
-            <div class="flex flex-wrap items-start justify-between gap-2 border-b border-gray-800/80 pb-4">
-              <div>
-                <div class="flex items-center gap-2">
-                  <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 light:text-slate-900">{exp.role}</h3>
-                  {exp.isCurrent && (
-                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-semibold animate-pulse">
-                      PRESENT
-                    </span>
-                  )}
-                </div>
-                <p class="text-sm font-semibold text-orange-400 mt-0.5">
-                  {exp.company} • <span class="text-gray-400 dark:text-gray-400 light:text-slate-500 font-normal">{exp.location}</span>
-                </p>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-gray-800 pb-4">
+            <div>
+              <div class="flex items-center gap-3">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-gray-100">
+                  {exp.role}
+                </h3>
+                {exp.isCurrent && (
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-semibold border border-emerald-500/20">
+                    Current Role
+                  </span>
+                )}
               </div>
-
-              <!-- Mobile Date Badge -->
-              <span class="md:hidden px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-mono border border-orange-500/20">
-                {exp.period}
-              </span>
+              <p class="text-sm font-semibold text-orange-600 dark:text-orange-400 font-mono mt-0.5">
+                {exp.company} — {exp.location}
+              </p>
             </div>
 
-            <!-- Summary -->
-            <p class="text-sm text-gray-300 dark:text-gray-300 light:text-slate-700 italic">
-              "{exp.summary}"
-            </p>
+            <div class="text-left sm:text-right">
+              <span class="text-xs font-mono text-slate-600 dark:text-gray-400 block">
+                {exp.period}
+              </span>
+              <span class="text-[11px] font-mono text-slate-500 dark:text-gray-500 uppercase">
+                {exp.type}
+              </span>
+            </div>
+          </div>
 
-            <!-- Key Quantified Achievements -->
-            <ul class="space-y-2.5 pt-2">
-              {exp.achievements.map(ach => (
-                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300 dark:text-gray-300 light:text-slate-700 leading-relaxed">
-                  <span class="text-orange-400 font-bold mt-0.5">✓</span>
-                  <span>{ach}</span>
+          <p class="text-xs sm:text-sm text-slate-700 dark:text-gray-300 leading-relaxed">
+            {exp.summary}
+          </p>
+
+          <!-- Key Deliverables List -->
+          <div class="space-y-2">
+            <h4 class="text-xs font-mono font-bold text-slate-800 dark:text-gray-300 uppercase">
+              Key Engineering Deliverables
+            </h4>
+            <ul class="space-y-2">
+              {exp.achievements.map(item => (
+                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-gray-300">
+                  <span class="text-orange-600 dark:text-orange-400 font-bold mt-0.5">-</span>
+                  <span class="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
+          </div>
 
-            <!-- Tech Stack Badges -->
-            <div class="pt-4 border-t border-gray-800/80 flex flex-wrap gap-2">
-              {exp.technologies.map(tech => (
-                <span class="px-3 py-1 rounded-lg bg-gray-900/80 dark:bg-gray-900/80 light:bg-slate-200 text-gray-300 dark:text-gray-300 light:text-slate-700 text-xs font-mono border border-gray-800 dark:border-gray-800 light:border-slate-300">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
+          <!-- Tech Stack Tags -->
+          <div class="pt-4 border-t border-slate-200 dark:border-gray-800 flex flex-wrap gap-1.5">
+            {exp.technologies.map(tech => (
+              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-gray-900/90 text-slate-800 dark:text-gray-300 text-xs font-mono border border-slate-300 dark:border-gray-800">
+                {tech}
+              </span>
+            ))}
           </div>
 
         </div>

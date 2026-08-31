@@ -1,0 +1,55 @@
+---
+import { currentFocusData } from '../data/portfolioData';
+---
+
+<section id="focus" class="py-20 relative border-t border-slate-200 dark:border-gray-800/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Title -->
+    <div class="text-left max-w-3xl space-y-3 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 dark:bg-gray-900/90 border border-slate-300 dark:border-gray-800 text-orange-600 dark:text-orange-400 text-xs font-mono font-semibold">
+        <span>// ACTIVE ROADMAP</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-gray-100">
+        Current Focus & <span class="text-orange-600 dark:text-orange-400">Active Pursuits</span>
+      </h2>
+      <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+        Key professional certifications, linguistic goals, open-source initiatives, and personal milestones currently in progress.
+      </p>
+    </div>
+
+    <!-- Grid of Current Focus Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {currentFocusData.map((item, index) => (
+        <div class="formal-card rounded-2xl p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-mono font-semibold border border-orange-500/20">
+                {item.category}
+              </span>
+              {item.targetDate && (
+                <span class="text-xs font-mono text-slate-500 dark:text-gray-400 font-semibold">
+                  {item.targetDate}
+                </span>
+              )}
+            </div>
+
+            <h3 class="text-lg font-bold text-slate-900 dark:text-gray-100">
+              {item.title}
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-700 dark:text-gray-300 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-200 dark:border-gray-800 flex items-center justify-between text-xs text-slate-500 dark:text-gray-400">
+            <span class="font-mono text-orange-600 dark:text-orange-400 font-semibold">Status: In Progress</span>
+            <span class="font-mono text-slate-400 dark:text-gray-500">0{index + 1} / 04</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

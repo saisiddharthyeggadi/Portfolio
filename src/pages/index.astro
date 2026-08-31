@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
+import CurrentFocus from '../components/CurrentFocus.astro';
 import Experience from '../components/Experience.astro';
 import Skills from '../components/Skills.astro';
 import Projects from '../components/Projects.astro';
@@ -12,14 +13,15 @@ import ResumeModal from '../components/ResumeModal.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Yeggadi Sai Siddharth | Bilingual AI & Systems Engineer Portfolio">
-  <!-- Navigation Bar -->
+<Layout title="Yeggadi Sai Siddharth | Systems Development & AI Engineer">
+  <!-- Navigation Header -->
   <Header />
 
-  <!-- Main Sections -->
-  <main class="space-y-12">
+  <!-- Main Single Page Content -->
+  <main class="space-y-4">
     <Hero />
     <About />
+    <CurrentFocus />
     <Experience />
     <Skills />
     <Projects />

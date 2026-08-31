@@ -2,51 +2,46 @@
 import { achievementsData } from '../data/portfolioData';
 ---
 
-<section id="achievements" class="py-20 relative">
+<section id="achievements" class="py-20 relative border-t border-slate-200 dark:border-gray-800/60">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- Section Title -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold">
+    <div class="text-left max-w-3xl space-y-3 mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 dark:bg-gray-900/90 border border-slate-300 dark:border-gray-800 text-orange-600 dark:text-orange-400 text-xs font-mono font-semibold">
         <span>// HONORS & RECOGNITION</span>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-        Scholastic & <span class="orange-gradient-text">Competitive Achievements</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-gray-100">
+        Scholastic & <span class="text-orange-600 dark:text-orange-400">Competitive Honors</span>
       </h2>
-      <p class="text-gray-400 dark:text-gray-400 light:text-slate-600 text-base">
-        Consistently placing in top ranks nationwide and maintaining relentless engineering discipline.
+      <p class="text-slate-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+        Academic examinations, algorithmic problem solving, and technical certifications.
       </p>
     </div>
 
-    <!-- Achievements Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {achievementsData.map((ach, index) => (
-        <div class="glass-panel rounded-3xl p-6 space-y-4 orange-glow-border flex flex-col justify-between group hover:-translate-y-1 transition-transform">
-          
-          <div class="space-y-3">
+    <!-- Achievements Grid (Subtle Formal Presentation) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {achievementsData.map((ach) => (
+        <div class="formal-card rounded-2xl p-6 space-y-3 flex flex-col justify-between">
+          <div class="space-y-2">
             <div class="flex items-center justify-between">
-              <span class="px-3 py-1 rounded-full bg-orange-500/10 text-orange-400 text-xs font-mono font-bold border border-orange-500/30">
-                {ach.badge}
+              <span class="text-xs font-mono text-orange-600 dark:text-orange-400 font-semibold">
+                {ach.organization}
               </span>
-              <span class="text-xs text-gray-400 font-mono">{ach.date}</span>
+              <span class="text-xs text-slate-500 dark:text-gray-400 font-mono">{ach.date}</span>
             </div>
 
-            <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 light:text-slate-900 group-hover:text-orange-400 transition-colors">
+            <h3 class="text-base font-bold text-slate-900 dark:text-gray-100">
               {ach.title}
             </h3>
 
-            <p class="text-xs text-orange-400 font-semibold font-mono">
-              {ach.organization}
-            </p>
-
-            <p class="text-xs sm:text-sm text-gray-300 dark:text-gray-300 light:text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-700 dark:text-gray-300 leading-relaxed">
               {ach.description}
             </p>
           </div>
 
-          <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
-            <span class="text-gray-400">Key Highlight</span>
-            <span class="font-bold text-gray-200 dark:text-gray-200 light:text-slate-800 font-mono">{ach.highlight}</span>
+          <div class="pt-3 border-t border-slate-200 dark:border-gray-800 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-500 dark:text-gray-400">Highlight:</span>
+            <span class="font-semibold text-slate-800 dark:text-gray-200 font-mono">{ach.highlight}</span>
           </div>
 
         </div>
